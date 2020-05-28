@@ -163,20 +163,20 @@ void read_cards(void)
 		hand[cards_read][0] = rank_ch;
 		hand[cards_read][1] = suit_ch;
 
-		bool flag = false;
+		int flag = 1;
 		for (int i = 0; i < cards_read; i++)
 			if (hand[i][0] == rank_ch && hand[i][1] == suit_ch) {
 				printf("중복입력\n");
-				flag = true;
+				flag = 0;
 				break;
 			}
 
-		if (flag) continue;
-
-
-		num_in_rank[rank]++;
-		num_in_suit[suit]++;
-		cards_read++;
+		if (flag==1)
+		{
+		    num_in_rank[rank]++;
+	            num_in_suit[suit]++;
+		    cards_read++;
+		}
 	}
 	array();
 }
