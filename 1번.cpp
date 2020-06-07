@@ -1,8 +1,10 @@
-﻿#include <stdio.h>
+﻿#pragma warning (disable:4996)
+#include <stdio.h>
 int main()
 {
-	int days[] = { 31,29,31,30,31,30,31,31,30,31,30,31 };
+	char x;
+	printf("문자를 입력하시오:");
+	scanf("%c", &x);
 
-	for(int i=0; i<12; i++)
-	printf("%d월은 %d일까지 있습니다.\n", i+1, days[i]);
+	printf("아스키 코드 값: %d", x);
 }
